@@ -1,0 +1,2 @@
+tar.gz: . name=lettuce-@version@ base=lettuce-@version@
+
