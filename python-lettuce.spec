@@ -16,7 +16,7 @@
 #
 
 Name:           python-lettuce
-Version:        0.1.33
+Version:        0.1.34
 Release:        gd
 Url:            http://github.com/gabrielfalcao/lettuce
 Summary:        Behaviour Driven Development for python
@@ -59,6 +59,9 @@ rm -rf %{buildroot}
 %{python_sitelib}/lettuce
 
 %changelog
+* Sun Feb 26 2012 skosyrev@griddynamics.com
+- Updated to 0.1.34
+  * Fetched from upstream at commit 6ca571b47
 * Mon Aug 29 2011 toms@suse.de
 - Updated to 0.1.32
   * Closed issue#138
