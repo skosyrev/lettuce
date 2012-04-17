@@ -36,6 +36,14 @@ from lettuce.registry import STEP_REGISTRY
 from lettuce.registry import CALLBACK_REGISTRY
 from lettuce.exceptions import StepLoadingError
 from lettuce.plugins import xunit_output
+from lettuce.plugins import bunch_output
+
+if os.name == 'nt':
+    try:
+        from colorama import init
+        init()
+    except ImportError:
+        pass
 
 from lettuce import exceptions
 
@@ -70,7 +78,7 @@ class Runner(object):
     features and step definitions on there.
     """
     def __init__(self, base_path, scenarios=None, verbosity=0,
-                 enable_xunit=False, xunit_filename=None):
+                 enable_xunit=False, xunit_filename=None, bunch_output_file=None):
         """ lettuce.Runner will try to find a terrain.py file and
         import it from within `base_path`
         """
@@ -100,6 +108,13 @@ class Runner(object):
 
         if enable_xunit:
             xunit_output.enable(filename=xunit_filename)
+
+        if bunch_output_file:
+            reload(bunch_output)
+            bunch_output.enable(bunch_output_file)
+        else:
+            bunch_output.disable()
+
 
         reload(output)
 

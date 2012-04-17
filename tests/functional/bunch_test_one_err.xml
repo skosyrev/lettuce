@@ -1,0 +1,103 @@
+<features>
+  <feature>
+    <properties>
+      <description type="unicode"></description>
+      <max_length type="int">68</max_length>
+      <name type="unicode">Error traceback for output testing</name>
+    </properties>
+    <started>2012-04-10 19:46:33.363000</started>
+    <scenarios>
+      <scenario>
+        <properties>
+          <failed type="bool">False</failed>
+          <indentation type="int">2</indentation>
+          <max_length type="int">29</max_length>
+          <name type="unicode">It should pass</name>
+          <passed type="bool">True</passed>
+          <ran type="bool">True</ran>
+          <table_indentation type="int">4</table_indentation>
+          <with_file type="str">C:\work\Openstack\lettuce\tests\functional\output_features\error_traceback\error_traceback.feature</with_file>
+        </properties>
+        <started>2012-04-10 19:46:33.368000</started>
+        <steps>
+          <step>
+            <properties>
+              <has_definition type="bool">True</has_definition>
+              <indentation type="int">4</indentation>
+              <max_length type="int">29</max_length>
+              <multiline type="unicode"></multiline>
+              <original_sentence type="unicode">Given my step that passes</original_sentence>
+              <proposed_method_name type="str">given_my_step_that_passes(step)</proposed_method_name>
+              <proposed_sentence type="unicode">Given my step that passes</proposed_sentence>
+              <ran type="bool">True</ran>
+              <sentence type="unicode">Given my step that passes</sentence>
+              <table_indentation type="int">6</table_indentation>
+              <passed type="bool">True</passed>
+            </properties>
+            <started>2012-04-10 19:46:33.374000</started>
+            <finished>2012-04-10 19:46:33.375000</finished>
+            <time>0.001001</time>
+            <result>passed</result>
+          </step>
+        </steps>
+        <outlines/>
+        <finished>2012-04-10 19:46:33.379000</finished>
+        <time>0.011001</time>
+        <result>passed</result>
+      </scenario>
+      <scenario>
+        <properties>
+          <failed type="bool">True</failed>
+          <indentation type="int">2</indentation>
+          <max_length type="int">68</max_length>
+          <name type="unicode">It should raise an exception different of AssertionError</name>
+          <passed type="bool">False</passed>
+          <ran type="bool">True</ran>
+          <table_indentation type="int">4</table_indentation>
+          <with_file type="str">C:\work\Openstack\lettuce\tests\functional\output_features\error_traceback\error_traceback.feature</with_file>
+        </properties>
+        <started>2012-04-10 19:46:33.420000</started>
+        <steps>
+          <step>
+            <properties>
+              <has_definition type="bool">True</has_definition>
+              <indentation type="int">4</indentation>
+              <max_length type="int">40</max_length>
+              <multiline type="unicode"></multiline>
+              <original_sentence type="unicode">Given my step that blows a exception</original_sentence>
+              <proposed_method_name type="str">given_my_step_that_blows_a_exception(step)</proposed_method_name>
+              <proposed_sentence type="unicode">Given my step that blows a exception</proposed_sentence>
+              <ran type="bool">True</ran>
+              <sentence type="unicode">Given my step that blows a exception</sentence>
+              <table_indentation type="int">6</table_indentation>
+              <failed type="bool">True</failed>
+              <failure>
+                <reason>
+                  <cause></cause>
+                  <traceback>Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\lettuce-0.1.34-py2.7.egg\lettuce\core.py", line 117, in __call__
+    ret = self.function(self.step, *args, **kw)
+  File "C:\work\Openstack\lettuce\tests\functional\output_features\error_traceback\error_traceback_steps.py", line 10, in given_my_step_that_blows_a_exception
+    raise RuntimeError
+RuntimeError
+</traceback>
+                </reason>
+              </failure>
+            </properties>
+            <started>2012-04-10 19:46:33.425000</started>
+            <finished>2012-04-10 19:46:33.428000</finished>
+            <time>0.003001</time>
+            <result>failed</result>
+          </step>
+        </steps>
+        <outlines/>
+        <finished>2012-04-10 19:46:33.432000</finished>
+        <time>0.012001</time>
+        <result>failed</result>
+      </scenario>
+    </scenarios>
+    <finished>2012-04-10 19:46:33.434000</finished>
+    <time>0.071001</time>
+    <result>failed</result>
+  </feature>
+</features>

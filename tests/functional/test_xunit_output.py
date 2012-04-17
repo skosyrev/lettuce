@@ -28,6 +28,7 @@ from lxml import etree
 from tests.functional.test_runner import feature_name
 from tests.asserts import prepare_stdout
 
+
 @with_setup(prepare_stdout, registry.clear)
 def test_xunit_output_with_no_errors():
     'Test xunit output with no errors'
@@ -87,6 +88,23 @@ def test_xunit_output_with_different_filename():
     xunit_output.wrt_output = assert_correct_xml
     runner = Runner(feature_name('error_traceback'), enable_xunit=True,
                     xunit_filename="custom_filename.xml")
+    runner.run()
+
+    assert_equals(1, len(called), "Function not called")
+    xunit_output.wrt_output = old
+
+@with_setup(prepare_stdout, registry.clear)
+def test_xunit_output_with_outline():
+    'Test xunit output with different filename'
+    called = []
+    def assert_correct_xml(filename, content):
+        called.append(True)
+        assert_equals(filename, "custom_filename.xml")
+
+    old = xunit_output.wrt_output
+    xunit_output.wrt_output = assert_correct_xml
+    runner = Runner(feature_name('fail_outline'), enable_xunit=True,
+        xunit_filename="custom_filename.xml")
     runner.run()
 
     assert_equals(1, len(called), "Function not called")

@@ -25,7 +25,9 @@ world._set = False
 
 def _function_matches(one, other):
     return (os.path.abspath(one.func_code.co_filename) == os.path.abspath(other.func_code.co_filename) and
-            one.func_code.co_firstlineno == other.func_code.co_firstlineno)
+            one.func_code.co_firstlineno == other.func_code.co_firstlineno and
+            one.__doc__ == other.__doc__)
+
 
 
 class CallbackDict(dict):

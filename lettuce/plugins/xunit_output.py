@@ -50,7 +50,7 @@ def enable(filename=None):
         tc = doc.createElement("testcase")
         tc.setAttribute("classname", classname)
         tc.setAttribute("name", step.sentence)
-        tc.setAttribute("time", str(total_seconds((datetime.now() - step.started))))
+        tc.setAttribute("time", str(total_seconds((datetime.now() - step.started + datetime.resolution))))
         
         if not step.ran:
             skip=doc.createElement("skipped")
@@ -76,7 +76,7 @@ def enable(filename=None):
         tc = doc.createElement("testcase")
         tc.setAttribute("classname", classname)
         tc.setAttribute("name", u'| %s |' % u' | '.join(outline.values()))
-        tc.setAttribute("time", str(total_seconds((datetime.now() - scenario.outline_started))))
+        tc.setAttribute("time", str(total_seconds((datetime.now() - scenario.outline_started + datetime.resolution))))
 
         for reason_to_fail in reasons_to_fail:
             cdata = doc.createCDATASection(reason_to_fail.traceback)

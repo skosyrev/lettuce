@@ -51,6 +51,12 @@ def main(args=sys.argv[1:]):
                       help='Write JUnit XML to this file. Defaults to '
                       'lettucetests.xml')
 
+    parser.add_option("--bunch-output",
+        dest="bunch_output_file",
+        default=None,
+        type="string",
+        help='Output results to XML data used by Bunch')
+
     options, args = parser.parse_args()
     if args:
         base_path = os.path.abspath(args[0])
@@ -66,6 +72,7 @@ def main(args=sys.argv[1:]):
         verbosity=options.verbosity,
         enable_xunit=options.enable_xunit,
         xunit_filename=options.xunit_file,
+        bunch_output_file=options.bunch_output_file
     )
 
     result = runner.run()

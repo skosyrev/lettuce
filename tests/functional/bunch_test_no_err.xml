@@ -1,0 +1,53 @@
+<features>
+  <feature>
+    <properties>
+      <description type="unicode"></description>
+      <max_length type="int">31</max_length>
+      <name type="unicode">one commented scenario</name>
+    </properties>
+    <started>2012-04-10 19:46:33.311000</started>
+    <scenarios>
+      <scenario>
+        <properties>
+          <failed type="bool">False</failed>
+          <indentation type="int">2</indentation>
+          <max_length type="int">22</max_length>
+          <name type="unicode">Do nothing</name>
+          <passed type="bool">True</passed>
+          <ran type="bool">True</ran>
+          <table_indentation type="int">4</table_indentation>
+          <with_file type="str">C:\work\Openstack\lettuce\tests\functional\output_features\commented_feature\commented_feature.feature</with_file>
+        </properties>
+        <started>2012-04-10 19:46:33.314000</started>
+        <steps>
+          <step>
+            <properties>
+              <has_definition type="bool">True</has_definition>
+              <indentation type="int">4</indentation>
+              <max_length type="int">22</max_length>
+              <multiline type="unicode"></multiline>
+              <original_sentence type="unicode">Given I do nothing</original_sentence>
+              <proposed_method_name type="str">given_i_do_nothing(step)</proposed_method_name>
+              <proposed_sentence type="unicode">Given I do nothing</proposed_sentence>
+              <ran type="bool">True</ran>
+              <sentence type="unicode">Given I do nothing</sentence>
+              <table_indentation type="int">6</table_indentation>
+              <passed type="bool">True</passed>
+            </properties>
+            <started>2012-04-10 19:46:33.322000</started>
+            <finished>2012-04-10 19:46:33.325000</finished>
+            <time>0.003001</time>
+            <result>passed</result>
+          </step>
+        </steps>
+        <outlines/>
+        <finished>2012-04-10 19:46:33.328000</finished>
+        <time>0.014001</time>
+        <result>passed</result>
+      </scenario>
+    </scenarios>
+    <finished>2012-04-10 19:46:33.331000</finished>
+    <time>0.020001</time>
+    <result>passed</result>
+  </feature>
+</features>

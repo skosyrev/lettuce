@@ -1,0 +1,434 @@
+<features>
+  <feature>
+    <properties>
+      <description type="unicode">As lettuce author
+In order to finish the first release
+I want to make scenario outlines work :)</description>
+      <max_length type="int">61</max_length>
+      <name type="unicode">Failful Scenario Outline</name>
+    </properties>
+    <started>2012-04-10 19:46:33.514000</started>
+    <scenarios>
+      <scenario>
+        <properties>
+          <failed type="bool">False</failed>
+          <indentation type="int">2</indentation>
+          <keys type="list">
+            <item id="0" type="unicode">username</item>
+            <item id="1" type="unicode">password</item>
+            <item id="2" type="unicode">email</item>
+            <item id="3" type="unicode">message</item>
+          </keys>
+          <max_length type="int">61</max_length>
+          <name type="unicode">fill a web form</name>
+          <outlines type="list">
+            <item id="0" type="dict">
+              <itemvalue type="dict">
+                <item>
+                  <key>username</key>
+                  <value type="unicode">john</value>
+                </item>
+                <item>
+                  <key>message</key>
+                  <value type="unicode">Welcome, John</value>
+                </item>
+                <item>
+                  <key>password</key>
+                  <value type="unicode">doe-1234</value>
+                </item>
+                <item>
+                  <key>email</key>
+                  <value type="unicode">john@gmail.org</value>
+                </item>
+              </itemvalue>
+            </item>
+            <item id="1" type="dict">
+              <itemvalue type="dict">
+                <item>
+                  <key>username</key>
+                  <value type="unicode">mary</value>
+                </item>
+                <item>
+                  <key>message</key>
+                  <value type="unicode">Welcome, Mary</value>
+                </item>
+                <item>
+                  <key>password</key>
+                  <value type="unicode">wee-9876</value>
+                </item>
+                <item>
+                  <key>email</key>
+                  <value type="unicode">mary@email.com</value>
+                </item>
+              </itemvalue>
+            </item>
+            <item id="2" type="dict">
+              <itemvalue type="dict">
+                <item>
+                  <key>username</key>
+                  <value type="unicode">foo</value>
+                </item>
+                <item>
+                  <key>message</key>
+                  <value type="unicode">Welcome, Foo</value>
+                </item>
+                <item>
+                  <key>password</key>
+                  <value type="unicode">foo-bar</value>
+                </item>
+                <item>
+                  <key>email</key>
+                  <value type="unicode">foo@bar.com</value>
+                </item>
+              </itemvalue>
+            </item>
+          </outlines>
+          <passed type="bool">False</passed>
+          <ran type="bool">False</ran>
+          <table_indentation type="int">4</table_indentation>
+          <with_file type="str">C:\work\Openstack\lettuce\tests\functional\output_features\fail_outline\fail_outline.feature</with_file>
+        </properties>
+        <started>2012-04-10 19:46:33.527000</started>
+        <steps>
+          <step>
+            <properties>
+              <has_definition type="bool">True</has_definition>
+              <indentation type="int">4</indentation>
+              <max_length type="int">56</max_length>
+              <multiline type="unicode"></multiline>
+              <original_sentence type="unicode">Given I open browser at "http://www.my-website.com/"</original_sentence>
+              <proposed_method_name type="unicode">given_i_open_browser_at_group1(step, group1)</proposed_method_name>
+              <proposed_sentence type="unicode">Given I open browser at "([^"]*)"</proposed_sentence>
+              <ran type="bool">True</ran>
+              <related_outline type="dict">
+                <item>
+                  <key>username</key>
+                  <value type="unicode">john</value>
+                </item>
+                <item>
+                  <key>message</key>
+                  <value type="unicode">Welcome, John</value>
+                </item>
+                <item>
+                  <key>password</key>
+                  <value type="unicode">doe-1234</value>
+                </item>
+                <item>
+                  <key>email</key>
+                  <value type="unicode">john@gmail.org</value>
+                </item>
+              </related_outline>
+              <sentence type="unicode">Given I open browser at "http://www.my-website.com/"</sentence>
+              <table_indentation type="int">6</table_indentation>
+              <passed type="bool">True</passed>
+            </properties>
+            <started>2012-04-10 19:46:33.563000</started>
+            <finished>2012-04-10 19:46:33.567000</finished>
+            <time>0.004001</time>
+            <result>passed</result>
+          </step>
+          <step>
+            <properties>
+              <has_definition type="bool">True</has_definition>
+              <indentation type="int">4</indentation>
+              <max_length type="int">26</max_length>
+              <multiline type="unicode"></multiline>
+              <original_sentence type="unicode">And click on "sign-up"</original_sentence>
+              <proposed_method_name type="unicode">and_click_on_group1(step, group1)</proposed_method_name>
+              <proposed_sentence type="unicode">And click on "([^"]*)"</proposed_sentence>
+              <ran type="bool">True</ran>
+              <related_outline type="dict">
+                <item>
+                  <key>username</key>
+                  <value type="unicode">john</value>
+                </item>
+                <item>
+                  <key>message</key>
+                  <value type="unicode">Welcome, John</value>
+                </item>
+                <item>
+                  <key>password</key>
+                  <value type="unicode">doe-1234</value>
+                </item>
+                <item>
+                  <key>email</key>
+                  <value type="unicode">john@gmail.org</value>
+                </item>
+              </related_outline>
+              <sentence type="unicode">And click on "sign-up"</sentence>
+              <table_indentation type="int">6</table_indentation>
+              <passed type="bool">True</passed>
+            </properties>
+            <started>2012-04-10 19:46:33.607000</started>
+            <finished>2012-04-10 19:46:33.611000</finished>
+            <time>0.004001</time>
+            <result>passed</result>
+          </step>
+          <step>
+            <properties>
+              <has_definition type="bool">True</has_definition>
+              <indentation type="int">4</indentation>
+              <max_length type="int">54</max_length>
+              <multiline type="unicode"></multiline>
+              <original_sentence type="unicode">When I fill the field "username" with "&lt;username&gt;"</original_sentence>
+              <proposed_method_name type="unicode">when_i_fill_the_field_group1_with_group2(step, group1, group2)</proposed_method_name>
+              <proposed_sentence type="unicode">When I fill the field "([^"]*)" with "([^"]*)"</proposed_sentence>
+              <ran type="bool">True</ran>
+              <related_outline type="dict">
+                <item>
+                  <key>username</key>
+                  <value type="unicode">john</value>
+                </item>
+                <item>
+                  <key>message</key>
+                  <value type="unicode">Welcome, John</value>
+                </item>
+                <item>
+                  <key>password</key>
+                  <value type="unicode">doe-1234</value>
+                </item>
+                <item>
+                  <key>email</key>
+                  <value type="unicode">john@gmail.org</value>
+                </item>
+              </related_outline>
+              <sentence type="unicode">When I fill the field "username" with "john"</sentence>
+              <table_indentation type="int">6</table_indentation>
+              <passed type="bool">True</passed>
+            </properties>
+            <started>2012-04-10 19:46:33.646000</started>
+            <finished>2012-04-10 19:46:33.649000</finished>
+            <time>0.003001</time>
+            <result>passed</result>
+          </step>
+          <step>
+            <properties>
+              <has_definition type="bool">True</has_definition>
+              <indentation type="int">4</indentation>
+              <max_length type="int">53</max_length>
+              <multiline type="unicode"></multiline>
+              <original_sentence type="unicode">And I fill the field "password" with "&lt;password&gt;"</original_sentence>
+              <proposed_method_name type="unicode">and_i_fill_the_field_group1_with_group2(step, group1, group2)</proposed_method_name>
+              <proposed_sentence type="unicode">And I fill the field "([^"]*)" with "([^"]*)"</proposed_sentence>
+              <ran type="bool">True</ran>
+              <related_outline type="dict">
+                <item>
+                  <key>username</key>
+                  <value type="unicode">john</value>
+                </item>
+                <item>
+                  <key>message</key>
+                  <value type="unicode">Welcome, John</value>
+                </item>
+                <item>
+                  <key>password</key>
+                  <value type="unicode">doe-1234</value>
+                </item>
+                <item>
+                  <key>email</key>
+                  <value type="unicode">john@gmail.org</value>
+                </item>
+              </related_outline>
+              <sentence type="unicode">And I fill the field "password" with "doe-1234"</sentence>
+              <table_indentation type="int">6</table_indentation>
+              <passed type="bool">True</passed>
+            </properties>
+            <started>2012-04-10 19:46:33.685000</started>
+            <finished>2012-04-10 19:46:33.689000</finished>
+            <time>0.004001</time>
+            <result>passed</result>
+          </step>
+          <step>
+            <properties>
+              <has_definition type="bool">True</has_definition>
+              <indentation type="int">4</indentation>
+              <max_length type="int">61</max_length>
+              <multiline type="unicode"></multiline>
+              <original_sentence type="unicode">And I fill the field "password-confirm" with "&lt;password&gt;"</original_sentence>
+              <proposed_method_name type="unicode">and_i_fill_the_field_group1_with_group2(step, group1, group2)</proposed_method_name>
+              <proposed_sentence type="unicode">And I fill the field "([^"]*)" with "([^"]*)"</proposed_sentence>
+              <ran type="bool">True</ran>
+              <related_outline type="dict">
+                <item>
+                  <key>username</key>
+                  <value type="unicode">john</value>
+                </item>
+                <item>
+                  <key>message</key>
+                  <value type="unicode">Welcome, John</value>
+                </item>
+                <item>
+                  <key>password</key>
+                  <value type="unicode">doe-1234</value>
+                </item>
+                <item>
+                  <key>email</key>
+                  <value type="unicode">john@gmail.org</value>
+                </item>
+              </related_outline>
+              <sentence type="unicode">And I fill the field "password-confirm" with "doe-1234"</sentence>
+              <table_indentation type="int">6</table_indentation>
+              <passed type="bool">True</passed>
+            </properties>
+            <started>2012-04-10 19:46:33.723000</started>
+            <finished>2012-04-10 19:46:33.727000</finished>
+            <time>0.004001</time>
+            <result>passed</result>
+          </step>
+          <step>
+            <properties>
+              <has_definition type="bool">True</has_definition>
+              <indentation type="int">4</indentation>
+              <max_length type="int">54</max_length>
+              <multiline type="unicode"></multiline>
+              <original_sentence type="unicode">And I fill the field "email" with "&lt;email&gt;"</original_sentence>
+              <proposed_method_name type="unicode">and_i_fill_the_field_group1_with_group2(step, group1, group2)</proposed_method_name>
+              <proposed_sentence type="unicode">And I fill the field "([^"]*)" with "([^"]*)"</proposed_sentence>
+              <ran type="bool">True</ran>
+              <related_outline type="dict">
+                <item>
+                  <key>username</key>
+                  <value type="unicode">john</value>
+                </item>
+                <item>
+                  <key>message</key>
+                  <value type="unicode">Welcome, John</value>
+                </item>
+                <item>
+                  <key>password</key>
+                  <value type="unicode">doe-1234</value>
+                </item>
+                <item>
+                  <key>email</key>
+                  <value type="unicode">john@gmail.org</value>
+                </item>
+              </related_outline>
+              <sentence type="unicode">And I fill the field "email" with "john@gmail.org"</sentence>
+              <table_indentation type="int">6</table_indentation>
+              <passed type="bool">True</passed>
+            </properties>
+            <started>2012-04-10 19:46:33.763000</started>
+            <finished>2012-04-10 19:46:33.766000</finished>
+            <time>0.003001</time>
+            <result>passed</result>
+          </step>
+          <step>
+            <properties>
+              <has_definition type="bool">True</has_definition>
+              <indentation type="int">4</indentation>
+              <max_length type="int">22</max_length>
+              <multiline type="unicode"></multiline>
+              <original_sentence type="unicode">And I click "done"</original_sentence>
+              <proposed_method_name type="unicode">and_i_click_group1(step, group1)</proposed_method_name>
+              <proposed_sentence type="unicode">And I click "([^"]*)"</proposed_sentence>
+              <ran type="bool">True</ran>
+              <related_outline type="dict">
+                <item>
+                  <key>username</key>
+                  <value type="unicode">john</value>
+                </item>
+                <item>
+                  <key>message</key>
+                  <value type="unicode">Welcome, John</value>
+                </item>
+                <item>
+                  <key>password</key>
+                  <value type="unicode">doe-1234</value>
+                </item>
+                <item>
+                  <key>email</key>
+                  <value type="unicode">john@gmail.org</value>
+                </item>
+              </related_outline>
+              <sentence type="unicode">And I click "done"</sentence>
+              <table_indentation type="int">6</table_indentation>
+              <passed type="bool">True</passed>
+            </properties>
+            <started>2012-04-10 19:46:33.803000</started>
+            <finished>2012-04-10 19:46:33.806000</finished>
+            <time>0.003001</time>
+            <result>passed</result>
+          </step>
+          <step>
+            <properties>
+              <has_definition type="bool">True</has_definition>
+              <indentation type="int">4</indentation>
+              <max_length type="int">42</max_length>
+              <multiline type="unicode"></multiline>
+              <original_sentence type="unicode">Then I see the message "&lt;message&gt;"</original_sentence>
+              <proposed_method_name type="unicode">then_i_see_the_message_group1(step, group1)</proposed_method_name>
+              <proposed_sentence type="unicode">Then I see the message "([^"]*)"</proposed_sentence>
+              <ran type="bool">True</ran>
+              <related_outline type="dict">
+                <item>
+                  <key>username</key>
+                  <value type="unicode">john</value>
+                </item>
+                <item>
+                  <key>message</key>
+                  <value type="unicode">Welcome, John</value>
+                </item>
+                <item>
+                  <key>password</key>
+                  <value type="unicode">doe-1234</value>
+                </item>
+                <item>
+                  <key>email</key>
+                  <value type="unicode">john@gmail.org</value>
+                </item>
+              </related_outline>
+              <sentence type="unicode">Then I see the message "Welcome, John"</sentence>
+              <table_indentation type="int">6</table_indentation>
+              <passed type="bool">True</passed>
+            </properties>
+            <started>2012-04-10 19:46:33.842000</started>
+            <finished>2012-04-10 19:46:33.845000</finished>
+            <time>0.003001</time>
+            <result>passed</result>
+          </step>
+        </steps>
+        <outlines>
+          <outline>
+            <properties/>
+            <started>2012-04-10 19:46:33.852000</started>
+            <finished>2012-04-10 19:46:33.852000</finished>
+            <time>0.000001</time>
+            <result>passed</result>
+          </outline>
+          <outline>
+            <properties/>
+            <started>2012-04-10 19:46:34.075000</started>
+            <finished>2012-04-10 19:46:34.075000</finished>
+            <time>0.000001</time>
+            <result>failed</result>
+            <failure>
+              <reason>
+                <cause></cause>
+                <traceback>Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\lettuce-0.1.34-py2.7.egg\lettuce\core.py", line 117, in __call__
+    ret = self.function(self.step, *args, **kw)
+  File "C:\work\Openstack\lettuce\tests\functional\output_features\fail_outline\fail_outline_steps.py", line 30, in when_i_fill_the_field_x_with_y
+    if field == 'password' and value == 'wee-9876':  assert False
+AssertionError
+</traceback>
+              </reason>
+            </failure>
+          </outline>
+          <outline>
+            <properties/>
+            <started>2012-04-10 19:46:34.299000</started>
+            <finished>2012-04-10 19:46:34.299000</finished>
+            <time>0.000001</time>
+            <result>passed</result>
+          </outline>
+        </outlines>
+        <finished>2012-04-10 19:46:34.301000</finished>
+        <time>0.774001</time>
+        <result>failed</result>
+      </scenario>
+    </scenarios>
+    <finished>2012-04-10 19:46:34.311000</finished>
+    <time>0.797001</time>
+    <result>failed</result>
+  </feature>
+</features>

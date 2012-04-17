@@ -1,0 +1,59 @@
+features:
+- &id001 !!python/object:lettuce.core.Feature
+  described_at: !!python/object:lettuce.core.FeatureDescription
+    description_at: !!python/tuple []
+    file: C:\work\Openstack\lettuce\tests\functional\output_features\commented_feature\commented_feature.feature
+    line: 1
+  description: !!python/unicode ''
+  language: &id002 !!python/object:lettuce.core.Language
+    code: !!python/unicode 'en'
+    examples: !!python/unicode 'Examples|Scenarios'
+    feature: !!python/unicode 'Feature'
+    name: !!python/unicode 'English'
+    native: !!python/unicode 'English'
+    scenario: !!python/unicode 'Scenario'
+    scenario_outline: !!python/unicode 'Scenario Outline'
+    scenario_separator: !!python/unicode '(Scenario Outline|Scenario)'
+  name: !!python/unicode 'one commented scenario'
+  original_string: !!python/unicode "Feature: one commented scenario\n  Scenario:\
+    \ Do nothing\n    Given I do nothing\n\n#  Scenario: Do something\n#    Given\
+    \ I do something\n#    Then I see that the test passes\n"
+  scenarios:
+  - &id004 !!python/object:lettuce.core.Scenario
+    described_at: !!python/object:lettuce.core.ScenarioDescription
+      file: C:\work\Openstack\lettuce\tests\functional\output_features\commented_feature\commented_feature.feature
+      line: 2
+    feature: *id001
+    keys: []
+    language: *id002
+    name: !!python/unicode 'Do nothing'
+    original_string: !!python/unicode "Feature: one commented scenario\n  Scenario:\
+      \ Do nothing\n    Given I do nothing\n\n#  Scenario: Do something\n#    Given\
+      \ I do something\n#    Then I see that the test passes\n"
+    outlines: []
+    solved_steps: []
+    steps:
+    - &id003 !!python/object:lettuce.core.Step
+      _remaining_lines: []
+      defined_at: !!python/object:lettuce.core.StepDefinition
+        file: C:\work\Openstack\lettuce\tests\functional\output_features\commented_feature\simple-steps.py
+        function: !!python/name:simple-steps.given_i_do_nothing ''
+        line: 5
+        step: *id003
+      described_at: !!python/object:lettuce.core.StepDescription
+        file: C:\work\Openstack\lettuce\tests\functional\output_features\commented_feature\commented_feature.feature
+        line: 3
+      has_definition: true
+      hashes: !!python/object:lettuce.core.HashList
+        step: *id003
+      keys: !!python/tuple []
+      multiline: !!python/unicode ''
+      original_sentence: !!python/unicode 'Given I do nothing'
+      passed: true
+      proposed_method_name: given_i_do_nothing(step)
+      proposed_sentence: !!python/unicode 'Given I do nothing'
+      ran: true
+      related_outline: null
+      scenario: *id004
+      sentence: !!python/unicode 'Given I do nothing'
+    with_file: C:\work\Openstack\lettuce\tests\functional\output_features\commented_feature\commented_feature.feature
