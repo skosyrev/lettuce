@@ -23,6 +23,9 @@ except ImportError:
     except ImportError:
         import xml.etree.ElementTree as ET
 
+def total_seconds(td):
+    return (td.microseconds + (td.seconds + td.days * 24 * 3600) * 10**6) / 10**6
+
 class PluginState(object):
     def __init__(self, **kw):
         self.set_atts = kw
@@ -195,7 +198,7 @@ def add_finished(element, dt):
 
 def add_results(element, passed=None, delta=None):
     if delta is not None:
-        ET.SubElement(element, 'time').text = "%f" % (delta.total_seconds())
+        ET.SubElement(element, 'time').text = "%f" % (total_seconds(delta))
 
     result = ET.SubElement(element, 'result')
     if passed is None:

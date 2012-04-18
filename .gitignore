@@ -1,6 +1,7 @@
 *.pyc
 .coverage
 ./tests/functional/2nd_feature_dir/step_definitions/__init__.py
+tests/functional/tmp/*
 docs/_build/
 docs/_build
 lettuce.egg-info/

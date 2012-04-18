@@ -19,12 +19,13 @@
 from lettuce import bunch_output
 from lettuce import registry
 from lettuce import Runner
-from os.path import abspath, dirname, join, split, curdir
+from os.path import abspath, dirname, join, split, curdir, exists
 from lettuce.fs import FileSystem
 from nose.tools import assert_equals, assert_true, with_setup
 from tests.functional.test_runner import feature_name
 from tests.asserts import prepare_stdout
 import lxml.etree as ET
+from os import mkdir
 
 
 def run_check(name, assert_fcn, output_filename):
@@ -50,6 +51,10 @@ def check_all_passed(items, name):
     assert_true(len(items) > 0, "No %s results" % name)
     assert_true(every(lambda rez: rez.text == "passed",items), "Every %s must have 'passed'" % name)
 
+def check_some_passed(items, name):
+    assert_true(len(items) > 0, "No %s results" % name)
+    assert_true(any(lambda rez: rez.text == "passed",items), "Every %s must have 'passed'" % name)
+
 def check_all_failed(items, name):
     assert_true(len(items) > 0, "No %s results" % name)
     assert_true(every(lambda rez: rez.text == "failed",items), "Every %s must have 'failed'" % name)
@@ -58,6 +63,13 @@ def check_some_failed(items, name):
     assert_true(len(items) > 0, "No %s results" % name)
     assert_true(any(lambda rez: rez.text == "failed",items), "Some %s must have 'failed'" % name)
 
+def tmp_output_result(name):
+    dir = abspath(join(dirname(__file__),'tmp'))
+    if not exists(dir):
+        mkdir(dir)
+    path =  join(dir, 'bunch_test_one_err.xml')
+    return FileSystem().open(path, 'w')
+    
 
 @with_setup(prepare_stdout, registry.clear)
 def test_bunch_output_no_errors():
@@ -71,7 +83,7 @@ def test_bunch_output_no_errors():
         check_all_passed(element.findall('feature/scenarios/scenario/result'), "scenario")
         check_all_passed(element.findall('feature/scenarios/scenario/steps/step/result'), "steps")
 
-        with FileSystem().open(abspath(join(dirname(__file__), 'bunch_test_no_err.xml')), "w") as f:
+        with tmp_output_result('bunch_test_no_err.xml') as f:
             f.write(ET.tostring(ET.ElementTree(element),  pretty_print=True))
 
     run_check('commented_feature', assert_correct_xml, output_filename)
@@ -89,9 +101,9 @@ def test_bunch_output_one_error():
         check_all_failed(element.findall('feature/result'), "feature")
         check_some_failed(element.findall('feature/scenarios/scenario/result'), "scenario")
         check_some_failed(element.findall('feature/scenarios/scenario/steps/step/result'), "steps")
-        check_all_failed(element.findall('feature/scenarios/scenario[0]/steps/step/result'), "steps")
-        check_all_passed(element.findall('feature/scenarios/scenario[1]/steps/step/result'), "steps")
-        with FileSystem().open(abspath(join(dirname(__file__), 'bunch_test_one_err.xml')), "w") as f:
+        check_some_failed(element.findall('feature/scenarios/scenario/steps/step/result'), "steps")
+        check_some_passed(element.findall('feature/scenarios/scenario/steps/step/result'), "steps")
+        with tmp_output_result('bunch_test_one_err.xml') as f:
             f.write(ET.tostring(ET.ElementTree(element),  pretty_print=True))
 
     run_check('error_traceback', assert_correct_xml, output_filename)
@@ -114,7 +126,7 @@ def test_bunch_output_fail_outline():
         #check_all_failed(element.findall('feature/scenarios/scenario/outlines/outline[2]/result'), "outlines")
         #check_all_passed(element.findall('feature/scenarios/scenario[1]/steps/step/result'), "steps")
 
-        with FileSystem().open(abspath(join(dirname(__file__), 'bunch_test_outline_fail.xml')), "w") as f:
+        with tmp_output_result('bunch_test_outline_fail.xml') as f:
             f.write(ET.tostring(ET.ElementTree(element),  pretty_print=True))
 
     run_check('fail_outline', assert_correct_xml, output_filename)
@@ -133,7 +145,7 @@ def test_bunch_output_success_outline():
         check_all_passed(element.findall('feature/scenarios/scenario/result'), "scenario")
         check_all_passed(element.findall('feature/scenarios/scenario/steps/step/result'), "steps")
         check_all_passed(element.findall('feature/scenarios/scenario/outlines/outline/result'), "outlines")
-        with FileSystem().open(abspath(join(dirname(__file__), 'bunch_test_outline_success.xml')), "w") as f:
+        with tmp_output_result('bunch_test_outline_success.xml') as f:
             f.write(ET.tostring(ET.ElementTree(element),  pretty_print=True))
 
     run_check('success_outline', assert_correct_xml, output_filename)
@@ -152,9 +164,9 @@ def test_bunch_output_fail_table():
         check_all_failed(element.findall('feature/result'), "feature")
         check_all_failed(element.findall('feature/scenarios/scenario/result'), "scenario")
         check_some_failed(element.findall('feature/scenarios/scenario/steps/step/result'), "steps")
-        check_all_failed(element.findall('feature/scenarios/scenario/steps/step[6]/result'), "steps")
+        check_some_passed(element.findall('feature/scenarios/scenario/steps/step/result'), "steps")
 
-        with FileSystem().open(abspath(join(dirname(__file__), 'bunch_test_table_fail.xml')), "w") as f:
+        with tmp_output_result('bunch_test_table_fail.xml') as f:
             f.write(ET.tostring(ET.ElementTree(element),  pretty_print=True))
 
     run_check('fail_table', assert_correct_xml, output_filename)
@@ -173,7 +185,7 @@ def test_bunch_output_success_table():
         check_all_passed(element.findall('feature/scenarios/scenario/result'), "scenario")
         check_all_passed(element.findall('feature/scenarios/scenario/steps/step/result'), "steps")
 
-        with FileSystem().open(abspath(join(dirname(__file__), 'bunch_test_table_success.xml')), "w") as f:
+        with tmp_output_result('bunch_test_table_success.xml') as f:
             f.write(ET.tostring(ET.ElementTree(element),  pretty_print=True))
 
     run_check('success_table', assert_correct_xml, output_filename)
